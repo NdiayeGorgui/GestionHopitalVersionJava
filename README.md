@@ -19,12 +19,11 @@ Voici les règles que le NLH veut observer :
 Taches
 1. Créer la base de données ainsi que les tables correspondantes.
 2. Implémenter le système du Northern Lights Hospital sous forme d’une application WPF, en utilisant Entity Framework.
-Patient (NSS, date naissance, nom, prénom, adresse, ville, province, code postal, téléphone,
+1. Patient (NSS, date naissance, nom, prénom, adresse, ville, province, code postal, téléphone,
 IDAssurance*)
-Admission (ID Admission, chirurgie programmé, date admission, date chirurgie, date du
-congé, téléviseur, téléphone, NSS*, Numéro Lit*,ID Médecin* )
-Lit (Numéro Lit, occupé, ID Type*, ID Département*)
-Type Lit (ID Type, description)
-Département (ID Département, nom département)
-Médecin (ID Médecin, nom, prénom)
-Assurance (ID Assurance, nom compagnie)
+2. Admission (IDAdmission, chirurgieprogrammé, dateadmission, datechirurgie, dateducongé, téléviseur, téléphone, NSS*, Numéro Lit*,ID Médecin* )
+3. Lit (NuméroLit, occupé, IDType*, IDDépartement*)
+4. Type Lit (IDType, description)
+5. Département (IDDépartement, nom département)
+6. Médecin (IDMédecin, nom, prénom)
+7. Assurance (IDAssurance, nomcompagnie)
