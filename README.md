@@ -22,7 +22,7 @@ Voici les règles que le NLH veut observer :
 ### 7,50$ pour la location d’un téléphone ;
 # Taches
 1. Créer la base de données ainsi que les tables correspondantes.
-2. Implémenter le système du Northern Lights Hospital sous forme d’une application WPF, en utilisant Entity Framework.
+2. Implémenter le système du Northern Lights Hospital sous forme d’une application Java.
 1. Patient (NSS, date naissance, nom, prénom, adresse, ville, province, code postal, téléphone,
 IDAssurance*)
 2. Admission (IDAdmission, chirurgieprogrammé, dateadmission, datechirurgie, dateducongé, téléviseur, téléphone, NSS*, Numéro Lit*,ID Médecin* )
