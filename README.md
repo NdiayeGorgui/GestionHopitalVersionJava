@@ -15,8 +15,12 @@ Voici les règles que le NLH veut observer :
 ## Le patient qui n’est pas couvert par une assurance privée devra assumer des frais pour une chambre semi-privée ou pour une chambre privée s’il a décidé de prendre ce type de chambre alors qu’une chambre standard était disponible ;
 ## Les patients qui vont subir une chirurgie sont automatiquement affectés à une chambre du département de chirurgie si un lit correspondant au type choisi est disponible. Dans le cas contraire, l’utilisateur peut sélectionner un autre type de lit ou une autre chambre disponible ;
 ## Les patients qui sont âgés de 16 ans ou moins qui ne sont pas admis pour une chirurgie sont automatiquement dirigés vers les chambres du département de pédiatrie lorsqu’un lit correspondant au type choisi est disponible. Dans le cas contraire, l’utilisateur peut sélectionner un autre type de lit ou une autre chambre disponible ;
-## Voici les tarifs quotidiens : 267$ pour une chambre semi-privée, 571$ pour une chambre privée, 42,50$ pour la location d’un téléviseur et 7,50$ pour la location d’un téléphone ;
-Taches
+## Voici les tarifs quotidiens : 
+### 267$ pour une chambre semi-privée, 
+### 571$ pour une chambre privée, 
+### 42,50$ pour la location d’un téléviseur et
+### 7,50$ pour la location d’un téléphone ;
+# Taches
 1. Créer la base de données ainsi que les tables correspondantes.
 2. Implémenter le système du Northern Lights Hospital sous forme d’une application WPF, en utilisant Entity Framework.
 1. Patient (NSS, date naissance, nom, prénom, adresse, ville, province, code postal, téléphone,
