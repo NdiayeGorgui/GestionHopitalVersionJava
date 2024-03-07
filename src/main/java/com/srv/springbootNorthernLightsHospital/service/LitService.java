@@ -3,10 +3,8 @@ package com.srv.springbootNorthernLightsHospital.service;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.srv.springbootNorthernLightsHospital.entities.Departement;
 import com.srv.springbootNorthernLightsHospital.entities.Lit;
 import com.srv.springbootNorthernLightsHospital.entities.Chambre;
@@ -67,34 +65,12 @@ public class LitService {
 
 	}
 	
-	/*public List<Lit> getAllLitsByType(String typeLit) {
-
-		List<Lit> listTypeLit= this.getAllLits().stream()
-				.filter(lit->lit.getChambre().getDescription().equalsIgnoreCase(typeLit)).collect(Collectors.toList());
-		return listTypeLit;
-
-		
-	}*/
-	
-	
 	public List<Lit> getAllLitsByType(String typeLit) {
 
 		List<Lit> listTypeLit= litRepository.findByChambreDescription(typeLit);
 		return listTypeLit;
-
-		
 	}
 	
-	/*public List<Lit> getAllLitsAvailableByType(String typeLit) {
-
-		List<Lit> listTypeLit= this.getAllLits().stream()
-				.filter(lit->lit.isOccupe())
-				.filter(lit->lit.getChambre().getDescription().equalsIgnoreCase(typeLit)).collect(Collectors.toList());
-				
-		return listTypeLit;
-
-		
-	}*/
 	public List<Lit> getAllLitsAvailableByDept(String dept) {
 
 		List<Lit> listTypeLit= this.getAllLits().stream()
@@ -121,7 +97,6 @@ public class LitService {
 		List<Lit> listTypeLit= litRepository.findByChambreDescriptionAndIsOccupe(typeLit, false);
 		
 			return listTypeLit;
-
 		
 	}
 	
@@ -142,7 +117,5 @@ public class LitService {
 			return true;
 		}
 			return false;
-
-		
 	}
 }

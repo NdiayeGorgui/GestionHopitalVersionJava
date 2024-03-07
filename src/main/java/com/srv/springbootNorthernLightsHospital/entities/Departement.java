@@ -1,7 +1,6 @@
 package com.srv.springbootNorthernLightsHospital.entities;
 
 import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,7 +24,6 @@ public class Departement {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nomDepartement;
-	
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "departement")

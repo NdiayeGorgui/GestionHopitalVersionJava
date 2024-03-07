@@ -84,9 +84,6 @@ public class UserService {
 		return roleRepository.findAll();
 	}
 
-	
-
-	
 	public void deleteRoleToUser(String userName, String roleName) {
 		User user=findUserByUserName(userName);
 		Role role=findRoleByRoleName(roleName);

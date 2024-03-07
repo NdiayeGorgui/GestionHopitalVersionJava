@@ -4,15 +4,13 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.srv.springbootNorthernLightsHospital.entities.Assurance;
-
 import com.srv.springbootNorthernLightsHospital.entities.Patient;
 import com.srv.springbootNorthernLightsHospital.exception.ResourceNotFoundException;
 import com.srv.springbootNorthernLightsHospital.repository.PatientRepository;
+
 @Service
 public class PatientService {
 	@Autowired

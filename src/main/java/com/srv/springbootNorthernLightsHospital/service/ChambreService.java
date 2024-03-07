@@ -3,13 +3,9 @@ package com.srv.springbootNorthernLightsHospital.service;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.srv.springbootNorthernLightsHospital.entities.Chambre;
-import com.srv.springbootNorthernLightsHospital.entities.Lit;
-import com.srv.springbootNorthernLightsHospital.entities.TypeChambre;
 import com.srv.springbootNorthernLightsHospital.exception.ResourceNotFoundException;
 import com.srv.springbootNorthernLightsHospital.repository.ChambreRepository;
 
@@ -61,7 +57,8 @@ public class ChambreService {
 	public List<Chambre> getAllChambreByType(String typeChambre) {
 
 		List<Chambre> listTypeChambre= this.getAllChambres().stream()
-				.filter(chambre->chambre.getDescription().equalsIgnoreCase(typeChambre)).collect(Collectors.toList());
+				.filter(chambre->chambre.getDescription().equalsIgnoreCase(typeChambre))
+				.collect(Collectors.toList());
 		return listTypeChambre;
 
 		
