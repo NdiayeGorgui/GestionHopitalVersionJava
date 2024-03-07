@@ -18,7 +18,6 @@ import com.srv.springbootNorthernLightsHospital.repository.AdmissionRepository;
 
 @Service
 public class AdmissionService {
-
 	@Autowired
 	AdmissionRepository admissionRepository;
 	@Autowired
@@ -26,8 +25,8 @@ public class AdmissionService {
 
 	@SuppressWarnings("unlikely-arg-type")
 	public Admission saveAdmission(Admission a) throws ResourceDuplicatedException, ResourceNotFoundException {
+		
 		LocalDateTime today = LocalDateTime.now();
-
 		a.setDateAdmission(today);
 		String typeAssurance=null;
 		String typeLit =null;
@@ -36,14 +35,12 @@ public class AdmissionService {
 		if (a.getPatient() != null) {
 			 typeAssurance = a.getPatient().getAssurance().getNomAssurance();
 		}
-		
-		
+			
 		if (a.getLit() != null) {
 			 typeLit = a.getLit().getChambre().getDescription();
 			 departement = a.getLit().getDepartement().getNomDepartement();
 		}
-		
-		
+			
 		if (a.getLit() == null || a.getMedecin()==null  || a.getPatient()==null) {
 			throw new ResourceNotFoundException(Constante.LIT_PATIENT_MEDECIN_REQUIS);
 		}
@@ -52,11 +49,9 @@ public class AdmissionService {
 			throw new ResourceDuplicatedException(Constante.PATIENT_EXISTANT_NON_LIBERE);
 		} else {
 			
-			
 			if(this.getLitStatusNotAvailable(a)==true) {
 				throw new ResourceNotFoundException(Constante.LIT_Occupe);
-			}
-			
+			}			
 			// si le patient n'est pas couvert par une assurance privé
 			if (typeAssurance.equalsIgnoreCase(Constante.RAMQ)) {
 				// si ya plus de lit disponible dans les chambres standards
@@ -76,8 +71,7 @@ public class AdmissionService {
 					if ((this.litService.emptyAvailableLitByType(typeLit))) {
 						throw new ResourceNotFoundException(Constante.LIT_INDISPONIBLE);
 					}
-				}
-				
+				}			
 			}
 
 			if (patientAMoinsDeSeizeAns(a) == true && a.isChirurgieProgramme() == false) {
@@ -90,18 +84,8 @@ public class AdmissionService {
 				affectationLitAutreDepartement(a, departement, typeLit);
 			}	
 
-			/*if (a.getLit() != null) {
-				a.getLit().setOccupe(true);
-				a.getLit().setChambre(a.getLit().getChambre());
-				a.getLit().setDepartement(a.getLit().getDepartement());
-
-				litService.saveLit(a.getLit());
-			} else {
-				throw new ResourceNotFoundException(Constante.LIT_REQUIS);
-			}*/
 			return admissionRepository.save(a);
 		}
-
 	}
 	
 	public void affectationLit(Admission a, String dept, Long id,String typeLit) throws ResourceNotFoundException {
@@ -148,7 +132,6 @@ public class AdmissionService {
 		if (myIds.contains(monLit.getId())) {
 			return true;
 		}
-
 		return false;
 	}
 
@@ -180,7 +163,6 @@ public class AdmissionService {
 				return true;
 			}
 		}
-
 		return false;
 	}
 
@@ -271,7 +253,6 @@ public class AdmissionService {
 		return valeur;
 	}
 	 
-
 	public String donnerConge(Long id, Admission a) throws ResourceNotFoundException, ResourceDuplicatedException {
 		Optional<Admission> ad = admissionRepository.findById(id);
 		if (ad.isPresent()) {
