@@ -228,7 +228,7 @@ public class AdmissionService {
 					valeur =calculFacturation(a, Constante.TARIF_PRIVE, valeur);
 				}
 				// si le patient choisit une chambre (lit) Semi-privée
-				if (a.getLit().getChambre().getDescription().equalsIgnoreCase(Constante.SEMI_PRIVE)) {
+				else if (a.getLit().getChambre().getDescription().equalsIgnoreCase(Constante.SEMI_PRIVE)) {
 					valeur =calculFacturation(a, Constante.TARIF_SEMI_PRIVE, valeur);
 				} else {
 					// sinon si le patient choisit une chambre (lit) Standard
